@@ -1,0 +1,27 @@
+/*!
+ * Bootstrap v2.2.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+@import "variables.less";
+
+// HACK 
+// Copy body's style from scaffolding.less since body can't be wrapped with any container 
+.bootstrap_ns {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackground;
+}
+
+.bootstrap_ns {
+    @import "bootstrap.less";
+}
+

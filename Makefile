@@ -1,7 +1,11 @@
 BOOTSTRAP = ./docs/assets/css/bootstrap.css
 BOOTSTRAP_LESS = ./less/bootstrap.less
+BOOTSTRAP_NS = ./docs/assets/css/bootstrap-ns.css
+BOOTSTRAP_NS_LESS = ./less/bootstrap-ns.less
 BOOTSTRAP_RESPONSIVE = ./docs/assets/css/bootstrap-responsive.css
 BOOTSTRAP_RESPONSIVE_LESS = ./less/responsive.less
+BOOTSTRAP_RESPONSIVE_NS = ./docs/assets/css/bootstrap-responsive-ns.css
+BOOTSTRAP_RESPONSIVE_NS_LESS = ./less/responsive-ns.less
 DATE=$(shell date +%I:%M%p)
 CHECK=\033[32m✔\033[39m
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
@@ -19,7 +23,9 @@ build:
 	@jshint js/tests/unit/*.js --config js/.jshintrc
 	@echo "Running JSHint on javascript...             ${CHECK} Done"
 	@recess --compile ${BOOTSTRAP_LESS} > ${BOOTSTRAP}
+	@recess --compile ${BOOTSTRAP_NS_LESS} > ${BOOTSTRAP_NS}
 	@recess --compile ${BOOTSTRAP_RESPONSIVE_LESS} > ${BOOTSTRAP_RESPONSIVE}
+	@recess --compile ${BOOTSTRAP_RESPONSIVE_NS_LESS} > ${BOOTSTRAP_RESPONSIVE_NS}
 	@echo "Compiling LESS with Recess...               ${CHECK} Done"
 	@node docs/build
 	@cp img/* docs/assets/img/
